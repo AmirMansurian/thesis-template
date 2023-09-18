@@ -6,14 +6,14 @@
 
 \usepackage{amssymb,amsmath}
 \usepackage[colorlinks,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage{minitoc} %table of content for each chapter
 \usepackage[usenames,dvipsnames]{pstricks}
 \usepackage{graphicx,subfigure,wrapfig}
-\usepackage{geometry}
+\usepackage{geometry,fancyhdr}
 \usepackage[mathscr]{euscript}
 \usepackage{multicol}
-\usepackage{multirow}
-\usepackage[figureposition=bottom,tableposition=top,font={small,bf},labelfont=bf]{caption}
-
+\usepackage{tabularx}
+\usepackage{pdfpages}
 \usepackage{algorithmicx,algorithm}
 
 \usepackage[localise=on,extrafootnotefeatures]{xepersian}
@@ -21,19 +21,19 @@
 \input{styles/alg-fa}
 
 
+
 % -------------------- Page Layout --------------------
 
 
-%\newgeometry{top=3cm,right=3cm,left=2.5cm,bottom=3cm,footskip=1.25cm}
-\newgeometry{margin=1in,bottom=1.1in,footskip=.4in}
+\newgeometry{top=3.5cm,bottom=3.5cm,left=2.5cm,right=3cm,headheight=25pt}
 
 \renewcommand{\baselinestretch}{1.4}
 \linespread{1.6}
 \setlength{\parskip}{0.45em}
 
-%\fancyhf{}
-%\rhead{\leftmark}
-%\lhead{\thepage}
+\fancyhf{}
+\rhead{\leftmark}
+\lhead{\thepage}
 
 
 % -------------------- Fonts --------------------
@@ -140,8 +140,8 @@ Path=styles/fonts/
 \renewcommand{\حذف}{\REM}
 \newcommand{\لر}{\lr}
 \newcommand{\کد}[1]{\lr{\tt #1}}
-\newcommand{\پاورقی}[1]{\footnote{\lr{#1}}}
-
+\newcommand{\پاورقی}[1]{\LTRfootnote{\lr{#1}}}
+\newcommand{\فهرست}{\minitoc}
 
 
 % -------------------- Dictionary --------------------
@@ -182,3 +182,6 @@ Path=styles/fonts/
 	\centering\includegraphics[width=#2]{figs/#1}\end{wrapfigure}}
 
 
+% for table of content in each Chapter
+\renewcommand{\mtctitle}{مطالب این فصل}
+\renewcommand{\mtifont}{\bf}

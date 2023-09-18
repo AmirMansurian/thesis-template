@@ -9,7 +9,7 @@
 
 %--------------------------------------------------------------------------
 %
-%  LaTeX Thesis Template (v4)
+%  LaTeX Thesis Template (v2.2)
 %  By: Hamid Zarrabi-Zadeh
 %
 %  Contributors:
@@ -20,70 +20,93 @@
 
 
 \documentclass[oneside,a4paper,12pt]{book}
+\usepackage{graphics}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\usepackage{caption} % for modifying the caption format
+
+% Define a command for right-to-left text
+\newcommand{\ltr}[1]{\beginL #1\endL}
+
+
+\newcommand*\rot{\rotatebox{90}}
+\newcommand*\OK{\ding{51}}
 
 \input{styles/common.tex}
 \input{styles/custom.tex}
 
 \begin{document}
+	
+	
+	% -------------------- Front Pages --------------------
+	
+	\pagenumbering{alph}
+	
+	\input{front/info.tex}
+	\input{front/template/title.tex}
+	
+	\input{front/template/besmellah.tex}
+	
+	% Uncomment the following line for adding signature page
+
+	%\input{dec.tex}
+	\includepdf[pages={1}]{Declaration.pdf}
+	\includepdf[pages={1}]{ApprovalSheet.pdf}
+
+	
+	\input{front/acknowledge.tex}
+	\input{front/abstract.tex}
+	
+	
+	% -------------------- Table of Contents --------------------
+	
+	\pagestyle{fancy}
+	
+	\dominitoc
+	\tableofcontents \newpage
+	\listoffigures \newpage
+	\listoftables \newpage
+	%\let\clearpage
+	%\let\clearpage
 
 
-% -------------------- Front Pages --------------------
-
-\include{front/info}
-\pagestyle{empty}
-
-\include{front/template/title}
-%\input{front/template/besmellah.tex}‌  % بسم‌الله
-
-\include{front/template/signatures}  % تصویب‌نامه
-%\include{front/template/declaration}  % اظهارنامه
-
-\pagestyle{plain}
-\pagenumbering{tartibi}
-
-\include{front/acknowledge}  % تقدیر و تشکر
-\include{front/abstract}
-
-
-% -------------------- Table of Contents --------------------
-
-\tableofcontents \newpage
-\listoftables \newpage
-\listoffigures \newpage
-
-
-% -------------------- Chapters --------------------
-
-\pagenumbering{arabic}
-
-\include{chapters/introduction}
-\include{chapters/preliminaries}
-\include{chapters/literature}
-\include{chapters/results}
-\include{chapters/conclusions}
-
-
-% -------------------- Bibliography & Dictionary --------------------
-
-\include{bibs/bibs}
-\include{front/dictionary}
-
-
-% -------------------- Appendices --------------------
-
-\begin{appendix}
-\include{chapters/appendix}
-\end{appendix}
-
-
-% -------------------- English Pages --------------------
-
-%\newgeometry{left=3cm,right=2.5cm}
-
-\include{front/abstract-eng}
-\include{front/template/title-eng}
-
-
-% -------------------- The End! --------------------
-
+	
+	\pagenumbering{arabic}
+	
+	% -------------------- Chapters --------------------
+	
+	\include{chapters/introduction}
+	\include{chapters/literature}
+	\include{chapters/methodology}
+	\include{chapters/results}
+	\include{chapters/conclusions}
+	
+	% -------------------- Appendices --------------------
+	
+	\begin{appendix}
+		\include{chapters/appendix}
+	\end{appendix}
+	
+	% -------------------- Bibliography --------------------
+	
+	
+	\input{bibs/bibs.tex}
+	
+	
+	% -------------------- English Pages --------------------
+	
+	
+	\newgeometry{left=3cm,right=2.5cm}
+	
+	\input{front/dictionary}
+	\input{front/abstract-eng.tex}
+	\input{front/template/title-eng.tex}
+	
+	% -------------------- The End! --------------------
+	
 \end{document}

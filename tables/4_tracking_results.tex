@@ -1,0 +1,49 @@
+
+\begin{table*}[!htbp]
+	\caption[نتایج ردیابی]{نتایج ردیابی. مقایسه عملکرد روش پیشنهادی $PRT-Track$ و روش‌های ردیابی اخیر بر روی مجموعه تست مجموعه‌داده ردیابی $Soccernet-Tracking$. (نماد $\dagger$ به معنای این است که نتایج گزارش شده از \cite{cioppa2022soccernet} است.)}
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c|c|c| } 
+			\hline
+			\multicolumn{7}{|c|}{truth ground using detections Oracle} \\
+			\hline
+			Method  & HOTA $\uparrow$ & DetA $\uparrow$ &  AssA $\uparrow$ & MOTA $\uparrow$ &  1IDF $\uparrow$ &  IDs $\downarrow$ \\
+			\hline
+			DeepSORT$^{\dagger}$ &   $69.52$ & $82.62$ & $58.66$ & $94.84$ & - & - \\ 
+			
+			ByteTrack$^{\dagger}$  & $71.5$ & $84.34$ & $60.71$ & $94.57$ & -  & - \\ 
+			
+			OC-SORT  &$ 80.94$ & $97.81$ & $66.98$ & $96.76$ & $74.79$ & $6079$  \\ 
+			
+			StrongSORT  &  $83.75$ & $95.08$ & $73.78$ & $94.67$ & $79.13$ & $2815$ \\ 
+			
+			StrongSORT++  &  $84.08$ & $95.07$ & $74.36$ & $94.62$ & $79.76$ & \textbf{$2619$} \\ 
+			
+			CBIoU  &  $89.20$ & $99.40$ & $80.00$ & $99.40$ & $86.10$ & -\\ 
+			
+			\textbf{PRT-Track} &  \textbf{$90.77$} & \textbf{$99.83$} & \textbf{$82.53$} & \textbf{$98.66$} & \textbf{$88.47$} & $3355$\\ 
+			
+			\hline
+			\hline
+			\multicolumn{7}{|c|}{detections 8YOLOv } \\
+			\hline
+			Method  & HOTA $\uparrow$ & DetA $\uparrow$ &  AssA $\uparrow$ & MOTA $\uparrow$ &  1IDF $\uparrow$ &  IDs $\downarrow$ \\
+			\hline
+			DeepSORT$^{\dagger}$  & $36.63$ & $40.02$ & $33.76$ & $33.91$ & -  & -\\ 
+			
+			FairMOT$^{\dagger}$  & $43.91$ & $46.31$ & $41.77$ & $50.69$ & - & -\\ 
+			
+			ByteTrack$^{\dagger}$  &  $47.22$ & $44.49$ & $50.25$ & $31.74$ & -  & -\\ 
+			
+			OC-SORT  &  $54.60$ & \textbf{$63.47$} & $47.07$ & \textbf{$76.18$} & $62.52$  & 3593\\ 
+			
+			StrongSORT  &  $54.86$ & $62.19$ & $48.79$ & $74.52$ & $65.1$ & $2178$\\ 
+			
+			StrongSORT++ & $56.21$ & $62.89$ & $50.27$ & $75.02$ & $66.53$ & $2106$\\ 
+			
+			\textbf{PRT-Track} &  \textbf{$59.77$} & $61.09$ & \textbf{$58.55$} & $73.07$ & \textbf{$74.44$} & \textbf{$1428$} \\ 
+			\hline
+			
+		\end{tabular}
+		\label{4_tracking_results}
+	\end{center}
+\end{table*}
